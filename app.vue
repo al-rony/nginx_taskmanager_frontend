@@ -10,7 +10,7 @@ async function addTask() {
   console.log('Task added:', title.value, description.value);
 
   try {
-    const response = await fetch('http://localhost.taskmanager.api:80/api/tasks', {
+    const response = await fetch('http://local.taskapi.test/api/tasks', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +32,7 @@ async function addTask() {
 
 async function getAllTasks() {
   try {
-    const response = await fetch('http://localhost.taskmanager.api:80/api/tasks');
+    const response = await fetch('http://local.taskapi.test/api/tasks');
     const data = await response.json();
     tasks.splice(0, tasks.length, ...data);
   } catch (error) {
